@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "690964635812",
+    "project_id": "kitau-73a9b",
+    "storage_bucket": "kitau-73a9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690964635812:android:b52231a52078c456d04631",
+        "android_client_info": {
+          "package_name": "com.example.kitau"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690964635812-jad8iq2u6vj8ntgibkfhhmu0usfr6og6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB17ZMOqk80s39CY44RwJ4bhJ2v1DP6NUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690964635812-jad8iq2u6vj8ntgibkfhhmu0usfr6og6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
