@@ -13,7 +13,7 @@ import com.example.kitau.dummy.DummyContent
 /**
  * A fragment representing a list of Items.
  */
-class FragILista : Fragment() {
+class ItemFragment : Fragment() {
 
     private var columnCount = 2
 
@@ -29,7 +29,7 @@ class FragILista : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_frag_i_lista_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_item_list, container, false)
 
         // Set the adapter
         if (view is RecyclerView) {
@@ -38,7 +38,7 @@ class FragILista : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyItemgenericoRecyclerViewAdapter(DummyContent.ITEMS)
+                adapter = MyItemRecyclerViewAdapter(DummyContent.ITEMS)
             }
         }
         return view
@@ -52,7 +52,7 @@ class FragILista : Fragment() {
         // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
-            FragILista().apply {
+            ItemFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }

@@ -12,22 +12,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="145dp"
         android:ems="10"
+        android:hint="email"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+
         android:id="@+id/pasword_acces"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
         android:layout_marginTop="44dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="pasword"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@+id/email_acces"
         app:layout_constraintTop_toBottomOf="@+id/email_acces" />
 

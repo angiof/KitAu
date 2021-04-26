@@ -13,20 +13,21 @@ class AccesEmail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = FirebaseAuth.getInstance()
-        
-        val binding=ActivityAccesEmailBinding.inflate(layoutInflater)
-        
-        with(binding){
-            buttonAcces.setOnClickListener {
 
-            acces(email = emailAcces.text.toString(),password = paswordAcces.text.toString())
+        val binding = ActivityAccesEmailBinding.inflate(layoutInflater)
+
+        with(binding) {
+            buttonAcces.setOnClickListener {
+                val email = emailAcces.text.toString()
+                val password = paswordAcces.text.toString()
+                acces(email = email, password = password)
             }
         }
         setContentView(binding.root)
 
     }
 
-    private fun acces(email:String,password:String){
+    private fun acces(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -34,14 +35,15 @@ class AccesEmail : AppCompatActivity() {
                     Log.d("g", "signInWithEmail:success")
                     val user = auth.currentUser
                     Toast.makeText(this, " e iut bon!!", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(baseContext,
-                        Controler::class.java))
+                    startActivity(Intent(baseContext, Controler::class.java))
                     //updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("TAG", "signInWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     //updateUI(null)
                 }
             }

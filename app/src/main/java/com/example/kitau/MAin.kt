@@ -62,14 +62,14 @@ class Main : AppCompatActivity() {
                 Log.d("g", "createUserWithEmail:success")
                 Toast.makeText(this, "fatto", Toast.LENGTH_SHORT).show()
                 val user = auth.currentUser
+                startActivity(Intent(this,Controler::class.java))
+
                 //updateUI(user)
             } else {
                 // If sign in fails, display a message to the user.
                 Log.w("g", "createUserWithEmail:failure", task.exception)
-                Toast.makeText(
-                    baseContext, "Authentication failed.",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(baseContext, "Authentication failed.",
+                    Toast.LENGTH_SHORT).show()
                 //updateUI(null)
             }
         }

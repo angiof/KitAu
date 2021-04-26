@@ -31,13 +31,20 @@ class Controler : AppCompatActivity() {
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_notifications,
-                R.id.lista_ricette
+                R.id.itemFragment
+
 
                 //  R.layout.l
             )
         )
+
+
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navView.itemIconTintList = null;
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -52,15 +59,17 @@ class Controler : AppCompatActivity() {
             R.id.exit -> {
                 auth.signOut()
                 snackisnacki("sessione chiusa")
+                startActivity(Intent(this,Controler::class.java))
 
-                val messaggio: String = "sei uscito dalla sessione"
-                val intent = Intent(this, Main::class.java).apply {
-                    putExtra("m", messaggio)
-                }
-                startActivity(intent)
+
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        auth.signOut()
+        super.onDestroy()
     }
 
 

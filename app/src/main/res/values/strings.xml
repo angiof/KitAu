@@ -38,5 +38,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="ricette_menu"><![CDATA[ricette /> </menu>]]></string>
+    <string name="title_activity_seconn_navigations">MainActivity</string>
+    <string name="title_activity_b_n2">MainActivity</string>
 
 </resources>
