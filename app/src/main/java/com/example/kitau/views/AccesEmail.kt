@@ -12,11 +12,14 @@ import com.google.firebase.auth.FirebaseAuth
 
 class AccesEmail : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    lateinit var binding: ActivityAccesEmailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         auth = FirebaseAuth.getInstance()
 
-        val binding = ActivityAccesEmailBinding.inflate(layoutInflater)
+         binding = ActivityAccesEmailBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
 
         with(binding) {
 
@@ -24,8 +27,7 @@ class AccesEmail : AppCompatActivity() {
             buttonAcces.setOnClickListener {
                 val email = emailAcces.text.toString()
                 val password = paswordAcces.text.toString()
-                acces(email = email, password = password)
-
+                ciberNet(email, password)
             }
 
             button.setOnClickListener {
@@ -35,6 +37,7 @@ class AccesEmail : AppCompatActivity() {
         }
         setContentView(binding.root)
     }
+
     private fun acces(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
@@ -55,5 +58,18 @@ class AccesEmail : AppCompatActivity() {
                     //updateUI(null)
                 }
             }
+    }
+
+    fun ciberNet(user: String, pasword: String) {
+        if (user.isNotEmpty() && pasword.isNotEmpty()) {
+
+            acces(email = user, password = pasword)
+        } else {
+            binding.emailAcces.error="inserire email"
+            binding.paswordAcces.error="insire pasword"
+
+            Toast.makeText(this, "campi vuoti", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }

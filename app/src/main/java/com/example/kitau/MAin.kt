@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.kitau.databinding.ActivityAccesEmailBinding
 import com.example.kitau.databinding.ActivityMainBinding
 import com.example.kitau.views.AccesEmail
 import com.example.kitau.views.Controler
@@ -15,11 +16,13 @@ import com.google.firebase.auth.FirebaseAuth
 
 class Main : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    lateinit var binding: ActivityMainBinding
+
 // ...
 // Initialize Firebase Auth
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
 
         supportActionBar?.hide()
@@ -94,6 +97,8 @@ class Main : AppCompatActivity() {
 
             createUserWithEmail(email = user,pasword = pasword)
         }else{
+            binding.email.error="inserisce email"
+            binding.password.error="insireri pasword"
             Toast.makeText(this, "campi vuoti", Toast.LENGTH_SHORT).show()
         }
 

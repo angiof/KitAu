@@ -20,6 +20,7 @@ class RicetteFrag : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentNotificationsBinding.inflate(layoutInflater)
+
         var array=ArrayList<RicettaEntity>()
         array.add(RicettaEntity("angelo","fagiolo magico","riso",22))
         array.add(RicettaEntity("angelo","fagiolo magico","riso",22))

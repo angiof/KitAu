@@ -26,3 +26,4 @@ fun Activity.snackisnacki(message: CharSequence, view: View? =findViewById(R.id.
         }
         snack.show()
     }}
+
