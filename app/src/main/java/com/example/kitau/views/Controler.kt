@@ -31,8 +31,8 @@ class Controler : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home,
-                R.id.navigation_notifications,
-                R.id.itemFragment
+                R.id.navigation_notifications
+
 
 
                 //  R.layout.l

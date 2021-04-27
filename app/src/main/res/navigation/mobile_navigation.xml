@@ -17,16 +17,12 @@
 
 
 
-    <fragment
-        android:id="@+id/itemFragment"
-        android:name="com.example.kitau.ui.dashboard.DashboardFragment"
-        android:label="fragment_item_list"
-        tools:layout="@layout/fragment_dashboard" />
+
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.kitau.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:name="com.example.kitau.ui.notifications.RicetteFrag"
+        android:label="ricette"
         tools:layout="@layout/fragment_notifications" />
 
 

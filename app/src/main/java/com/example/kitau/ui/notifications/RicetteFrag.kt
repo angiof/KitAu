@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kitau.databinding.FragmentNotificationsBinding
 
-class NotificationsFragment : Fragment() {
+class RicetteFrag : Fragment() {
 
 
     override fun onCreateView(
