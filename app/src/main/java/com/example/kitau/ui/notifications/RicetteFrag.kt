@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kitau.databinding.FragmentNotificationsBinding
+import com.example.kitau.db.RicettaEntity
 
 class RicetteFrag : Fragment() {
 
@@ -19,10 +20,10 @@ class RicetteFrag : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentNotificationsBinding.inflate(layoutInflater)
-        var array=ArrayList<RicettePojo>()
-        array.add(RicettePojo("angelo"))
-        array.add(RicettePojo("angelo"))
-        array.add(RicettePojo("angelo"))
+        var array=ArrayList<RicettaEntity>()
+        array.add(RicettaEntity("angelo"))
+        array.add(RicettaEntity("angelo"))
+        array.add(RicettaEntity("angelo"))
         val viewAdapterRicetta:RecyclerView.Adapter<*>
         val layoutManager=LinearLayoutManager(requireActivity(),LinearLayoutManager.VERTICAL,false)
         val gridLayoutManager=LinearLayoutManager(requireContext(),GridLayoutManager.VERTICAL,false)

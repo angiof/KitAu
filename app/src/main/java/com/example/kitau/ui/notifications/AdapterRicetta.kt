@@ -5,8 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kitau.databinding.RecyModelBinding
+import com.example.kitau.db.RicettaEntity
 
-class AdapterRicetta(private var mdaata: ArrayList<RicettePojo>, val contex: Context?) :
+class AdapterRicetta(private var mdaata: ArrayList<RicettaEntity>, val contex: Context?) :
     RecyclerView.Adapter<AdapterRicetta.RicetteHolder>() {
 
     inner class RicetteHolder(val binding: RecyModelBinding) : RecyclerView.ViewHolder(binding.root)
@@ -21,7 +22,7 @@ class AdapterRicetta(private var mdaata: ArrayList<RicettePojo>, val contex: Con
 
     override fun onBindViewHolder(holder: AdapterRicetta.RicetteHolder, position: Int) {
         with(holder.binding){
-            titoloRicetta.text=mdaata[position].nome.toString()
+            titoloRicetta.text=mdaata[position].titolo.toString()
 
         }
     }
