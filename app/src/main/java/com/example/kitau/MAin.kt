@@ -88,12 +88,6 @@ class Main : AppCompatActivity() {
         }
     }
 
-    private fun showSnackBar() {
-        val snack = Snackbar.make(View(this), "This is a simple Snackbar", Snackbar.LENGTH_LONG)
-        snack.show()
-    }
-
-
 }
 
 

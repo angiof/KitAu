@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -59,7 +60,7 @@ class Controler : AppCompatActivity() {
             R.id.exit -> {
                 auth.signOut()
                 snackisnacki("sessione chiusa")
-                startActivity(Intent(this,Controler::class.java))
+                startActivity(Intent(this,Main::class.java))
 
 
             }
@@ -70,6 +71,11 @@ class Controler : AppCompatActivity() {
     override fun onDestroy() {
         auth.signOut()
         super.onDestroy()
+    }
+
+    fun ok(item: MenuItem) {
+        Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
+
     }
 
 

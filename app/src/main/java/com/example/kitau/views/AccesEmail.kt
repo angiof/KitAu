@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.constraintlayout.motion.widget.MotionLayout
+import com.example.kitau.Main
 import com.example.kitau.databinding.ActivityAccesEmailBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -17,11 +19,29 @@ class AccesEmail : AppCompatActivity() {
         val binding = ActivityAccesEmailBinding.inflate(layoutInflater)
 
         with(binding) {
+
+
             buttonAcces.setOnClickListener {
                 val email = emailAcces.text.toString()
                 val password = paswordAcces.text.toString()
                 acces(email = email, password = password)
+
             }
+
+            button.setOnClickListener {
+                startActivity(Intent(baseContext, Main::class.java))
+                finish()
+
+            }
+
+
+
+
+
+
+
+
+
         }
         setContentView(binding.root)
 

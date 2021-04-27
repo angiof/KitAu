@@ -14,17 +14,18 @@
 
         <activity
             android:name=".views.Controler"
-            android:label="@string/title_activity_controler" />
-        <activity android:name=".views.AccesEmail" />
-
-
-        <activity android:name=".Main" >
+             />
+        <activity android:name=".views.AccesEmail" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+            </activity>
+
+            <activity
+                android:label="Main"
+         android:name=".Main" />
     </application>
 
 </manifest>

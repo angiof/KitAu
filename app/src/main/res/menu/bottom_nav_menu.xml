@@ -8,13 +8,16 @@
 
 
     <item
+        android:icon="@drawable/ic_bake"
+        android:id="@+id/lista_ricette"
+        android:onClick="ok"
+        android:title="ricette" />
+
+
+    <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_bell"
         android:title="@string/title_notifications" />
 
-    <item
-        android:icon="@drawable/ic_bake"
-        android:id="@+id/lista_ricette"
-        android:title="ricette"></item>
 
-        </menu>
+</menu>
