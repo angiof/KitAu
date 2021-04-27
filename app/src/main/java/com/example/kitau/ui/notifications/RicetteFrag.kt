@@ -21,9 +21,10 @@ class RicetteFrag : Fragment() {
     ): View? {
         val binding = FragmentNotificationsBinding.inflate(layoutInflater)
         var array=ArrayList<RicettaEntity>()
-        array.add(RicettaEntity("angelo"))
-        array.add(RicettaEntity("angelo"))
-        array.add(RicettaEntity("angelo"))
+        array.add(RicettaEntity("angelo","fagiolo magico","riso",22))
+        array.add(RicettaEntity("angelo","fagiolo magico","riso",22))
+        array.add(RicettaEntity("angelo","fagiolo magico","riso",22))
+
         val viewAdapterRicetta:RecyclerView.Adapter<*>
         val layoutManager=LinearLayoutManager(requireActivity(),LinearLayoutManager.VERTICAL,false)
         val gridLayoutManager=LinearLayoutManager(requireContext(),GridLayoutManager.VERTICAL,false)

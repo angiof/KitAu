@@ -3,6 +3,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="400dp"
     android:layout_height="200dp"
@@ -31,13 +32,43 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/descrizione_ricetta"
             android:layout_width="234dp"
             android:layout_height="25dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="8dp"
             android:text="descrizione"
             app:layout_constraintEnd_toEndOf="@+id/titolo_ricetta"
             app:layout_constraintStart_toStartOf="@+id/titolo_ricetta"
             app:layout_constraintTop_toBottomOf="@+id/titolo_ricetta" />
+
+        <TextView
+            android:id="@+id/ingredienti_ricetta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="ingredienti"
+            app:layout_constraintEnd_toEndOf="@+id/descrizione_ricetta"
+            app:layout_constraintStart_toStartOf="@+id/descrizione_ricetta"
+            app:layout_constraintTop_toBottomOf="@+id/descrizione_ricetta" />
+
+        <TextView
+            android:id="@+id/tempo_ricetta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="sans-serif"
+            android:text="tempo"
+            app:layout_constraintEnd_toStartOf="@+id/tempo_ricetta"
+            app:layout_constraintTop_toTopOf="@+id/tempo_ricetta" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
