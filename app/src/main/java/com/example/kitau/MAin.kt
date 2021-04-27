@@ -19,18 +19,16 @@ class Main : AppCompatActivity() {
 // Initialize Firebase Auth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+
+        supportActionBar?.hide()
 // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
 
-        val binding =ActivityMainBinding.inflate(layoutInflater)
-
         //snackisnacki(ricevemessagio.toString())
         with(binding) {
-
-
-
 
 
             signUpButton.setOnClickListener {
@@ -38,8 +36,9 @@ class Main : AppCompatActivity() {
                 var email = email.text.toString()
                 var pasword = password.text.toString()
 
-                createUserWithEmail(email, pasword)
-
+               //
+                // createUserWithEmail(email, pasword)
+                ciberNet(email,pasword)
 
             }
 
@@ -62,14 +61,16 @@ class Main : AppCompatActivity() {
                 Log.d("g", "createUserWithEmail:success")
                 Toast.makeText(this, "fatto", Toast.LENGTH_SHORT).show()
                 val user = auth.currentUser
-                startActivity(Intent(this,Controler::class.java))
+                startActivity(Intent(this, Controler::class.java))
 
                 //updateUI(user)
             } else {
                 // If sign in fails, display a message to the user.
                 Log.w("g", "createUserWithEmail:failure", task.exception)
-                Toast.makeText(baseContext, "Authentication failed.",
-                    Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    baseContext, "Authentication failed.",
+                    Toast.LENGTH_SHORT
+                ).show()
                 //updateUI(null)
             }
         }
@@ -86,6 +87,16 @@ class Main : AppCompatActivity() {
         } else {
             Toast.makeText(this, "da accedere", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun ciberNet(user:String,pasword: String){
+        if (user.isNotEmpty()&&pasword.isNotEmpty()){
+
+            createUserWithEmail(email = user,pasword = pasword)
+        }else{
+            Toast.makeText(this, "campi vuoti", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
 }

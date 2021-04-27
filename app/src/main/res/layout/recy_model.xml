@@ -1,55 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:id="@+id/card_view"
+    android:layout_width="400dp"
+    android:layout_height="200dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    card_view:cardBackgroundColor="#ffebee"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="8dp"
+    card_view:cardUseCompatPadding="true">
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="24dp"
-        android:paddingTop="34dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        card_view:cardBackgroundColor="#ffebee"
-        card_view:cardCornerRadius="16dp"
-        card_view:cardElevation="5dp"
-        card_view:cardUseCompatPadding="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/titolo_ricetta"
+            android:layout_width="322dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="28dp"
+            android:text="titolo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <TextView
-                android:id="@+id/titolo_ricetta"
-                android:layout_width="322dp"
-                android:layout_height="29dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="28dp"
-                android:text="titolo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="234dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="22dp"
-                android:text="descrizione"
-                app:layout_constraintEnd_toEndOf="@+id/titolo_ricetta"
-                app:layout_constraintStart_toStartOf="@+id/titolo_ricetta"
-                app:layout_constraintTop_toBottomOf="@+id/titolo_ricetta" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="234dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="22dp"
+            android:text="descrizione"
+            app:layout_constraintEnd_toEndOf="@+id/titolo_ricetta"
+            app:layout_constraintStart_toStartOf="@+id/titolo_ricetta"
+            app:layout_constraintTop_toBottomOf="@+id/titolo_ricetta" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

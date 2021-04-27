@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#f06292"
     android:layout_height="match_parent"
     tools:context=".Main">
 
-    <LinearLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
         android:orientation="vertical"
+        app:layoutDescription="@xml/activity_main_xml_linearlayout_scene"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,63 +23,82 @@
         tools:ignore="MissingConstraints">
 
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
-            android:contentDescription=""
-            android:src="@mipmap/ic_launcher"
-            tools:ignore="ContentDescription" />
+        <!-- Link to Login Screen -->
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="351dp"
+            android:layout_height="301dp"
+            android:contentDescription=""
+            android:src="@drawable/ic_cutlery"
+            tools:ignore="ContentDescription"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="64dp" />
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="305dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="32dp"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textColor="@color/black" />
-
+            android:shadowColor="#FFFFFF"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="279dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="24dp"
             android:focusableInTouchMode="true"
             android:hint="@string/hint_password"
             android:imeActionId="@+id/login"
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/email"
+            app:layout_constraintStart_toStartOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@+id/email"
             tools:ignore="InvalidImeActionId" />
-
 
         <Button
             android:id="@+id/sign_up_button"
             style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_buttons"
+            android:backgroundTint="#ba2d65"
+            android:fontFamily="monospace"
             android:text="@string/action_sign_in_short"
-            android:textColor="@android:color/black"
-            android:textStyle="bold" />
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- Link to Login Screen -->
-
-        <Button
+        <TextView
             android:id="@+id/sign_in_button"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:background="@null"
-            android:text="@string/btn_link_to_login"
+            android:layout_width="137dp"
+            android:layout_height="42dp"
+            android:backgroundTint="#ba2d65"
+            android:fontFamily="monospace"
+            android:shadowColor="#FFFFFF"
+
+            android:text="hai gia un account? accedi"
+            android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="15sp" />
-    </LinearLayout>
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"

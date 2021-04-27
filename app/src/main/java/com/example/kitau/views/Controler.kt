@@ -32,22 +32,14 @@ class Controler : AppCompatActivity() {
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_notifications
-
-
-
                 //  R.layout.l
             )
         )
 
-
-
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         navView.itemIconTintList = null;
-
-
     }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_options, menu)
         return super.onCreateOptionsMenu(menu)
@@ -62,21 +54,16 @@ class Controler : AppCompatActivity() {
                 snackisnacki("sessione chiusa")
                 startActivity(Intent(this,Main::class.java))
 
-
             }
         }
         return super.onOptionsItemSelected(item)
     }
-
     override fun onDestroy() {
         auth.signOut()
         super.onDestroy()
     }
-
     fun ok(item: MenuItem) {
         Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
-
     }
-
 
 }

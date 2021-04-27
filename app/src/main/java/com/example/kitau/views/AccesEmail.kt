@@ -31,22 +31,10 @@ class AccesEmail : AppCompatActivity() {
             button.setOnClickListener {
                 startActivity(Intent(baseContext, Main::class.java))
                 finish()
-
             }
-
-
-
-
-
-
-
-
-
         }
         setContentView(binding.root)
-
     }
-
     private fun acces(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
