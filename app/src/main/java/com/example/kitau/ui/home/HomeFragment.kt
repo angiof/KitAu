@@ -41,6 +41,7 @@ class HomeFragment : Fragment() {
             }
 
             textHome.text=auth.currentUser.email.toString()
+         //ime   userVerifica.text=auth.currentUser.isEmailVerified.toString()
 
         }
 
