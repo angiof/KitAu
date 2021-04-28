@@ -1,11 +1,9 @@
 package com.example.kitau.views
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,6 +12,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.kitau.Main
 import com.example.kitau.R
 import com.example.kitau.ui.home.snackisnacki
+import com.example.kitau.ui.notifications.InsertDialogFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 class Controler : AppCompatActivity() {
@@ -48,13 +48,20 @@ class Controler : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.inserimento -> {
+                val dialogFragment= InsertDialogFragment()
+                dialogFragment.show(supportFragmentManager,"FragmentSupport")
 
-            R.id.exit -> {
-                auth.signOut()
-                snackisnacki("sessione chiusa")
-                startActivity(Intent(this,Main::class.java))
 
             }
+            R.id.exit -> {
+
+                auth.signOut()
+                snackisnacki("sessione chiusa")
+                startActivity(Intent(this, Main::class.java))
+
+            }
+
         }
         return super.onOptionsItemSelected(item)
     }

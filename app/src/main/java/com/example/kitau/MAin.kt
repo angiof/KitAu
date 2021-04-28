@@ -6,11 +6,9 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kitau.databinding.ActivityAccesEmailBinding
 import com.example.kitau.databinding.ActivityMainBinding
 import com.example.kitau.views.AccesEmail
 import com.example.kitau.views.Controler
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
 
