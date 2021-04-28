@@ -17,9 +17,11 @@
     card_view:cardUseCompatPadding="true">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/recy_model_xml_constraintlayout_scene2">
 
         <TextView
             android:id="@+id/titolo_ricetta"
@@ -27,6 +29,7 @@
             android:layout_height="29dp"
             android:layout_marginTop="28dp"
             android:layout_marginEnd="28dp"
+            android:paddingLeft="88dp"
             android:text="titolo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,39 +39,66 @@
             android:layout_width="234dp"
             android:layout_height="25dp"
             android:layout_marginTop="8dp"
+            android:paddingLeft="28dp"
             android:text="descrizione"
-            app:layout_constraintEnd_toEndOf="@+id/titolo_ricetta"
-            app:layout_constraintStart_toStartOf="@+id/titolo_ricetta"
-            app:layout_constraintTop_toBottomOf="@+id/titolo_ricetta" />
+            app:layout_constraintEnd_toEndOf="@+id/descrizione_label"
+            app:layout_constraintStart_toStartOf="@+id/descrizione_label"
+            app:layout_constraintTop_toBottomOf="@+id/descrizione_label" />
 
         <TextView
             android:id="@+id/ingredienti_ricetta"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="ingredienti"
-            app:layout_constraintEnd_toEndOf="@+id/descrizione_ricetta"
-            app:layout_constraintStart_toStartOf="@+id/descrizione_ricetta"
-            app:layout_constraintTop_toBottomOf="@+id/descrizione_ricetta" />
+            android:hint="000:00"
+            android:paddingTop="8dp"
+            android:text="00:00"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
-        <TextView
-            android:id="@+id/tempo_ricetta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="8dp"
-            android:text="TextView"
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="65dp"
+            android:layout_height="40dp"
+            android:paddingHorizontal="0dp"
+            android:paddingVertical="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            card_view:srcCompat="@drawable/crono_foreground" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/texview_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
-            android:fontFamily="sans-serif"
-            android:text="tempo"
-            app:layout_constraintEnd_toStartOf="@+id/tempo_ricetta"
-            app:layout_constraintTop_toTopOf="@+id/tempo_ricetta" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="8dp"
+            android:fontFamily="cursive"
+            android:text="NOME RICETTA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/descrizione_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="DESCRIZIONE INGREDIENTI"
+            app:layout_constraintEnd_toEndOf="@+id/titolo_ricetta"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="@+id/titolo_ricetta"
+            app:layout_constraintTop_toBottomOf="@+id/titolo_ricetta" />
+
+        <TextView
+            android:id="@+id/minuti_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:paddingTop="8dp"
+            android:text="MINUTI"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ingredienti_ricetta"
+            app:layout_constraintTop_toTopOf="@+id/ingredienti_ricetta"
+            app:layout_constraintVertical_bias="0.142" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 </androidx.cardview.widget.CardView>

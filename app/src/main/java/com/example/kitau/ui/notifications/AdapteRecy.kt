@@ -37,7 +37,7 @@ class AdapteRecy(private var mdaata: Array<RicettaEntity> = emptyArray()) :
 
         private val titoloRicetta: TextView by lazy { itemView.findViewById<TextView>(R.id.titolo_ricetta) }
         val descrizioneRicetta: TextView by lazy { itemView.findViewById<TextView>(R.id.descrizione_ricetta) }
-        val tempoRicetta: TextView by lazy { itemView.findViewById<TextView>(R.id.descrizione_ricetta) }
+        val tempoRicetta: TextView by lazy { itemView.findViewById<TextView>(R.id.ingredienti_ricetta) }
         val cardView: CardView by lazy { itemView.findViewById<CardView>(R.id.card_view) }
         fun bindItems(item: RicettaEntity): View {
             titoloRicetta.text = item.titolo.toString()
