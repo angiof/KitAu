@@ -18,10 +18,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
 
-
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
