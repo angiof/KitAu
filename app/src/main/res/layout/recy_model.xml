@@ -68,7 +68,7 @@
             android:paddingVertical="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            card_view:srcCompat="@drawable/crono_foreground" />
+            card_view:srcCompat="@drawable/ic_chronometer" />
 
         <TextView
             android:id="@+id/texview_label"
