@@ -3,30 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <Transition
-        motion:constraintSetEnd="@+id/end"
-        motion:constraintSetStart="@id/start"
-        motion:duration="1000">
-       <KeyFrameSet>
-       </KeyFrameSet>
-        <OnClick />
-        <OnClick motion:targetId="@+id/descrizione_ricetta" />
-    </Transition>
-
     <ConstraintSet android:id="@+id/start">
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            motion:layout_constraintTop_toTopOf="parent"
             android:layout_width="wrap_content"
             android:id="@+id/texview_label"
-            motion:layout_constraintBottom_toTopOf="@+id/titolo_ricetta"
-            android:layout_marginBottom="8dp"
-            motion:layout_constraintEnd_toEndOf="@+id/imageView5"
-            motion:layout_constraintStart_toStartOf="@+id/imageView5" />
+            motion:layout_editor_absoluteX="30dp"
+            motion:layout_editor_absoluteY="18dp"
+            android:visibility="gone" />
         <Constraint
             android:layout_height="29dp"
             android:layout_marginTop="84dp"
@@ -34,17 +21,19 @@
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="322dp"
             android:id="@+id/titolo_ricetta"
-            motion:layout_constraintStart_toStartOf="parent" />
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone" />
         <Constraint
             android:layout_height="55dp"
             android:layout_width="113dp"
             motion:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="128dp"
-            android:layout_marginStart="128dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:id="@+id/imageView5"
             motion:layout_constraintTop_toTopOf="parent"
             android:layout_marginBottom="108dp"
-            motion:layout_constraintBottom_toBottomOf="parent" />
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.0" />
         <Constraint
             android:id="@+id/minuti_label"
             motion:layout_constraintStart_toEndOf="@+id/ingredienti_ricetta"
@@ -70,14 +59,37 @@
             motion:layout_constraintEnd_toEndOf="@+id/titolo_ricetta"
             android:layout_width="wrap_content"
             motion:layout_constraintTop_toBottomOf="@+id/titolo_ricetta"
-            android:id="@+id/descrizione_label" />
+            android:id="@+id/descrizione_label"
+            android:visibility="gone" />
         <Constraint
-            android:layout_height="0dp"
-            android:layout_width="0dp"
+            android:layout_height="69dp"
+            android:layout_width="229dp"
             motion:layout_constraintTop_toBottomOf="@+id/descrizione_label"
             android:id="@+id/descrizione_ricetta"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintBottom_toBottomOf="parent" />
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.959"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_editor_absoluteX="19dp"
+            motion:layout_editor_absoluteY="95dp" />
     </ConstraintSet>
+    <ConstraintSet
+        android:id="@+id/descri"
+        motion:deriveConstraintsFrom="@+id/start" >
+        <Constraint
+            android:id="@+id/descrizione_ricetta"
+            motion:layout_constraintEnd_toEndOf="@+id/descrizione_label"
+            android:layout_width="234dp"
+            android:layout_height="25dp"
+            motion:layout_constraintTop_toBottomOf="@+id/descrizione_label"
+            motion:layout_constraintStart_toStartOf="@+id/descrizione_label"
+            android:layout_marginTop="8dp" />
+    </ConstraintSet>
+    <ConstraintSet
+        android:id="@+id/o"
+        motion:deriveConstraintsFrom="@+id/start" />
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end" />
 </MotionScene>

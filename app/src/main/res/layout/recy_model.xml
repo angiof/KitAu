@@ -21,18 +21,8 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutDescription="@xml/recy_model_xml_constraintlayout_scene2">
+        app:layoutDescription="@xml/recy_model_xml_constraintlayout_scene3">
 
-        <TextView
-            android:id="@+id/titolo_ricetta"
-            android:layout_width="322dp"
-            android:layout_height="29dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="28dp"
-            android:paddingLeft="88dp"
-            android:text="titolo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/descrizione_ricetta"
@@ -44,6 +34,20 @@
             app:layout_constraintEnd_toEndOf="@+id/descrizione_label"
             app:layout_constraintStart_toStartOf="@+id/descrizione_label"
             app:layout_constraintTop_toBottomOf="@+id/descrizione_label" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/titolo_ricetta"
+            android:layout_width="322dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="28dp"
+            android:paddingLeft="16dp"
+            android:text="titolo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
 
         <TextView
             android:id="@+id/ingredienti_ricetta"
