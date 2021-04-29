@@ -28,13 +28,14 @@ class RicetteFrag : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-populateAdapter()
+        populateAdapter()
         _binding = FragmentNotificationsBinding.inflate(layoutInflater)
-        binding.swipppeer.setOnRefreshListener { populateAdapter()
-            binding.swipppeer.isRefreshing=false
+        binding.swipppeer.setOnRefreshListener {
+            populateAdapter()
+            binding.swipppeer.isRefreshing = false
 
         }
         return binding.root
@@ -50,9 +51,9 @@ populateAdapter()
 
             db = DBLocale.invoke(activity)
             val layoutManager =
-                    LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             val gridLayoutManager =
-                    LinearLayoutManager(requireContext(), GridLayoutManager.HORIZONTAL, false)
+                LinearLayoutManager(requireContext(), GridLayoutManager.HORIZONTAL, false)
             binding.recy.setHasFixedSize(true)
             // recyclerView.layoutManager = layoutManager
             binding.recy.layoutManager = layoutManager
@@ -60,11 +61,10 @@ populateAdapter()
             binding.recy.adapter = adapteRecy
 
 
-
         }
     }
 
-     fun populateAdapter() {
+    fun populateAdapter() {
         GlobalScope.launch(Dispatchers.Main) {
             array = db?.DaoRicette()?.getAll() as Array<RicettaEntity>
 
@@ -85,13 +85,16 @@ populateAdapter()
 }
 
 
-
 class InsertDialogFragment : DialogFragment() {
 
     private lateinit var binding: FragmentCustomDialogBinding
     private var db: DBLocale? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         binding = FragmentCustomDialogBinding.inflate(layoutInflater)
 
@@ -101,15 +104,23 @@ class InsertDialogFragment : DialogFragment() {
         funButton()
         return binding.root
     }
+
     private fun funButton() {
 
         binding.buttonOk.setOnClickListener {
+
+            //ciberNetAcces()
+
+
             GlobalScope.launch(Dispatchers.Main) {
                 db = DBLocale.invoke(requireActivity())
-                db?.DaoRicette()?.insertAll(                 RicettaEntity(titolo = binding.textTitle.text.toString(),descrizione = binding.textDescription.text.toString(),tempo = Integer.parseInt(binding.textTime.text.toString()))
+                db?.DaoRicette()?.insertAll(
+                    RicettaEntity(
+                        titolo = binding.textTitle.text.toString(),
+                        descrizione = binding.textDescription.text.toString(),
+                        tempo = Integer.parseInt(binding.textTime.text.toString())
+                    )
                 )
-
-
 
 
             }
@@ -118,7 +129,7 @@ class InsertDialogFragment : DialogFragment() {
             dismiss()
         }
         binding.buttonCancel.setOnClickListener {
-dismiss()
+            dismiss()
 
 
         }
@@ -134,15 +145,15 @@ dismiss()
             val dm = DisplayMetrics()
             requireActivity().windowManager.defaultDisplay.getMetrics(dm)
             if (dialog.window != null) {
-                dialog.window!!.setLayout((dm.widthPixels * 0.9).toInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
+                dialog.window!!.setLayout(
+                    (dm.widthPixels * 0.9).toInt(),
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
                 dialog.window!!.setBackgroundDrawableResource(R.color.transparent)
 
             }
         }
     }
-
-
-
 
 
 }

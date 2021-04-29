@@ -1,5 +1,6 @@
 package com.example.kitau.ui.home
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,9 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+
+
+
         auth = FirebaseAuth.getInstance()
         val binding=FragmentHomeBinding.inflate(layoutInflater)
 
@@ -44,3 +48,4 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 }
+
