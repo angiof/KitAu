@@ -23,4 +23,12 @@
         <item name="colorControlNormal">@color/purple_500</item>
         <item name="colorControlActivated">@color/rossa</item>
     </style>
+
+
+    <style name="bontisto." parent="Widget.AppCompat.Button">
+        <item name="android:colorBackground">#E6DCE6</item>
+        <item name="android:background">@drawable/shape_buttons</item>
+
+    </style>
+
 </resources>

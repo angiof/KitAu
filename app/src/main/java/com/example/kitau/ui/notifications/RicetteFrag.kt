@@ -109,9 +109,9 @@ class InsertDialogFragment : DialogFragment() {
 
         binding.buttonOk.setOnClickListener {
 
-            //ciberNetAcces()
-
-
+            val titolo=binding.textTitle.text.toString()
+            val ingreddienti=binding.textDescription.text.toString()
+            val tempo=binding.textTime.text.toString()
             GlobalScope.launch(Dispatchers.Main) {
                 db = DBLocale.invoke(requireActivity())
                 db?.DaoRicette()?.insertAll(
@@ -132,6 +132,16 @@ class InsertDialogFragment : DialogFragment() {
             dismiss()
 
 
+        }
+
+    }
+
+    private fun ciberNetAcces(titolo:String,ingreddienti:String,tempo:String) {
+        if (titolo.isNotEmpty()&&ingreddienti.isNotEmpty()&& tempo.isNotEmpty()){
+            Toast.makeText(requireContext(), "dati inseriti", Toast.LENGTH_SHORT).show()
+        }else{
+            binding.textTitle.error="vuoto"
+            binding.textDescription.error="vuoto"
         }
 
     }

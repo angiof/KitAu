@@ -40,5 +40,11 @@
     <string name="ricette_menu"><![CDATA[ricette /> </menu>]]></string>
     <string name="title_activity_seconn_navigations">MainActivity</string>
     <string name="title_activity_b_n2">MainActivity</string>
+    <string name="texview_home"><u><b><i>probider</i></b></u></string>
+    <string name="stattus"> <u>stato:</u></string>
+    <string name="register"><u><b><i>stato</i></b></u></string>
+    <string name="verifica"><u><b><i>email non comfermata</i></b></u></string>
+
+
 
 </resources>
